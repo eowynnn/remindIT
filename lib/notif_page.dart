@@ -5,6 +5,17 @@ class NotifPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              Text("Notification"),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
