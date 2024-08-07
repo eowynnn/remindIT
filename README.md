@@ -1,4 +1,4 @@
-# layout
+# RemindIT
 
 A new Flutter project.
 
