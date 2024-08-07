@@ -104,24 +104,97 @@ class WelcomePage extends StatelessWidget {
                       ),
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                            EdgeInsets.symmetric(vertical: 5.5, horizontal: 16),
                         width: 73,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color(0xff00B4D8),
+                          color: Color(0xff42DCF9),
                         ),
                         child: Text("Check",
                             style: TextStyle(color: Colors.white)),
                       ),
                     ],
                   ),
+                ),
+                SizedBox(
+                  height: 25,
+                ),
+                Text("Healthy lifestyle tips"),
+                SizedBox(
+                  height: 15,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ArtickelWidget(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ArtickelWidget(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ArtickelWidget(),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    ArtickelWidget()
+                  ],
                 )
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+}
+
+class ArtickelWidget extends StatelessWidget {
+  const ArtickelWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 140,
+      width: 400,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: Color(0xffE6F7FF),
+      ),
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Container(
+          padding: EdgeInsets.symmetric(vertical: 23, horizontal: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text("Ideal Hours for Sleep"),
+              Text("8hours 30minutes"),
+              SizedBox(
+                height: 15,
+              ),
+              Container(
+                height: 35,
+                width: 95,
+                padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 15),
+                decoration: BoxDecoration(
+                    color: Color(0xff42DCF9),
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text(
+                  "Learn More",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+        )
+      ]),
     );
   }
 }
