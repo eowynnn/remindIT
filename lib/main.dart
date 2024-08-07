@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/notif_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -103,16 +104,26 @@ class WelcomePage extends StatelessWidget {
                             fontSize: 14, fontWeight: FontWeight.bold),
                       ),
                       Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 5.5, horizontal: 16),
-                        width: 73,
+                        // padding:
+                        //     EdgeInsets.symmetric(vertical: 5.5, horizontal: 16),
+                        width: 88,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color(0xff42DCF9),
                         ),
-                        child: Text("Check",
-                            style: TextStyle(color: Colors.white)),
+                        child: ElevatedButton(
+                          style: ButtonStyle(
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xff42DCF9))),
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return NotifPage();
+                            }));
+                          },
+                          child: Text("Check",
+                              style: TextStyle(color: Colors.white)),
+                        ),
                       ),
                     ],
                   ),
