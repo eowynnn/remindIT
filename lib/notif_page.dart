@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:layout/main.dart';
 
 class NotifPage extends StatelessWidget {
   const NotifPage({super.key});
@@ -7,6 +6,14 @@ class NotifPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Notifications",
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: Color(0xffffffff),
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
@@ -15,42 +22,54 @@ class NotifPage extends StatelessWidget {
           ),
           child: SingleChildScrollView(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
                   height: 23,
                 ),
-                ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shadowColor: Colors.transparent,
-                    ),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return HomePage();
-                      }));
-                    },
-                    child:
-                        Image(image: AssetImage('assets/png/Arrow_left.jpg'))),
                 SizedBox(height: 23),
-                ListNotif(),
+                ListNotif(
+                  name: "Drink Water",
+                  time: "30 minutes",
+                  title: "Its time to drink water",
+                  desc: "Hello Irfa, Its time to drink water",
+                ),
                 SizedBox(
                   height: 15,
                 ),
-                ListNotif(),
+                ListNotif(
+                  name: "Eat",
+                  time: "5 Hours",
+                  title: "Its time to Eat",
+                  desc: "Hello Irfa, Its time to Eat",
+                ),
                 SizedBox(
                   height: 15,
                 ),
-                ListNotif(),
+                ListNotif(
+                  name: "Stretching",
+                  time: "1 hour",
+                  title: "Its time to stretch",
+                  desc: "Hello Irfa, Its time to Stretch",
+                ),
                 SizedBox(
                   height: 15,
                 ),
-                ListNotif(),
+                ListNotif(
+                  name: "Drink Water",
+                  time: "30 minutes",
+                  title: "Its time to drink water",
+                  desc: "Hello Irfa, Its time to drink water",
+                ),
                 SizedBox(
                   height: 15,
                 ),
-                ListNotif(),
+                ListNotif(
+                  name: "Eat",
+                  time: "5 Hours",
+                  title: "Its time to Eat",
+                  desc: "Hello Irfa, Its time to Eat",
+                ),
               ],
             ),
           ),
@@ -63,12 +82,20 @@ class NotifPage extends StatelessWidget {
 class ListNotif extends StatelessWidget {
   const ListNotif({
     super.key,
+    required this.name,
+    required this.time,
+    required this.title,
+    required this.desc,
   });
 
+  final String name;
+  final String time;
+  final String desc;
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 145,
+        height: 150,
         width: 400,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
@@ -90,22 +117,22 @@ class ListNotif extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Drink water",
+                  name,
                   style: TextStyle(fontSize: 14),
                 ),
                 Text(
-                  "Remind Every 30 minute",
+                  "Remind Every " + time,
                   style: TextStyle(fontSize: 12),
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
-                  "- Title : Its time to drink",
+                  "- Title : " + title,
                   style: TextStyle(fontSize: 12),
                 ),
                 Text(
-                  "- Description : Hello Irfa, its time to Drink",
+                  "- Description : " + desc,
                   style: TextStyle(fontSize: 12),
                   overflow: TextOverflow.ellipsis,
                 ),

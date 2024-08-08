@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:layout/notif_page.dart';
+
+import 'notif_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -106,15 +107,16 @@ class HomePage extends StatelessWidget {
                       Container(
                         // padding:
                         //     EdgeInsets.symmetric(vertical: 5.5, horizontal: 16),
-                        width: 88,
+                        width: 90,
                         height: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
                         ),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all<Color>(
-                                  Color(0xff42DCF9))),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                                Color(0xff42DCF9)),
+                          ),
                           onPressed: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) {
@@ -189,7 +191,7 @@ class ArtickelWidget extends StatelessWidget {
               ),
               Container(
                 height: 35,
-                width: 95,
+                width: 106,
                 padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 15),
                 decoration: BoxDecoration(
                     color: Color(0xff42DCF9),
@@ -225,7 +227,7 @@ class NotifWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 25, vertical: 12),
       width: 95,
-      height: 65,
+      height: 70,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
