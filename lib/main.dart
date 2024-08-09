@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/artickel_page.dart';
 
 import 'notif_page.dart';
 
@@ -114,7 +115,7 @@ class HomePage extends StatelessWidget {
                         ),
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
+                            backgroundColor: WidgetStateProperty.all<Color>(
                                 Color(0xff42DCF9)),
                           ),
                           onPressed: () {
@@ -192,16 +193,30 @@ class ArtickelWidget extends StatelessWidget {
               Container(
                 height: 35,
                 width: 106,
-                padding: EdgeInsets.symmetric(vertical: 7.5, horizontal: 15),
                 decoration: BoxDecoration(
                     color: Color(0xff42DCF9),
                     borderRadius: BorderRadius.circular(20)),
-                child: Text(
-                  "Learn More",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold),
+                child: Material(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.transparent,
+                  child: InkWell(
+                    borderRadius: BorderRadius.circular(20),
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ArtickelPage();
+                      }));
+                    },
+                    child: Center(
+                      child: Text(
+                        "Learn More",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
                 ),
               )
             ],
