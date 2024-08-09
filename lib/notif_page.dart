@@ -148,6 +148,9 @@ class ListNotif extends StatelessWidget {
                   children: [
                     Image(image: AssetImage("assets/png/Bell_active.png")),
                     Image(image: AssetImage("assets/png/Edit_light.png")),
+                    SizedBox(
+                      height: 15,
+                    ),
                     Image(image: AssetImage("assets/png/Trash_light.png")),
                   ],
                 ),
