@@ -1,6 +1,7 @@
 # RemindIT
 
-A new Flutter project.
+
+Remind It is a simple application designed to help you maintain a healthy lifestyle. Ideal for sedentary employees and less active students, Remind It provides regular reminders to maintain your health throughout the day. Equipped with smart notifications, Remind It ensures you stay focused on your health.
 
 ## Getting Started
 
