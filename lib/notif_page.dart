@@ -17,60 +17,59 @@ class NotifPage extends StatelessWidget {
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.symmetric(
-            horizontal: 25,
-          ),
           child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 23,
-                ),
-                SizedBox(height: 23),
-                ListNotif(
-                  name: "Drink Water",
-                  time: "30 minutes",
-                  title: "Its time to drink water",
-                  desc: "Hello Irfa, Its time to drink water",
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                ListNotif(
-                  name: "Eat",
-                  time: "5 Hours",
-                  title: "Its time to Eat",
-                  desc: "Hello Irfa, Its time to Eat",
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                ListNotif(
-                  name: "Stretching",
-                  time: "1 hour",
-                  title: "Its time to stretch",
-                  desc: "Hello Irfa, Its time to Stretch",
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                ListNotif(
-                  name: "Drink Water",
-                  time: "30 minutes",
-                  title: "Its time to drink water",
-                  desc: "Hello Irfa, Its time to drink water",
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                ListNotif(
-                  name: "Eat",
-                  time: "5 Hours",
-                  title: "Its time to Eat",
-                  desc: "Hello Irfa, Its time to Eat",
-                ),
-              ],
+            child: Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  SizedBox(height: 23),
+                  ListNotif(
+                    name: "Drink Water",
+                    time: "30 minutes",
+                    title: "Its time to drink water",
+                    desc: "Hello Irfa, Its time to drink water",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  ListNotif(
+                    name: "Eat",
+                    time: "5 Hours",
+                    title: "Its time to Eat",
+                    desc: "Hello Irfa, Its time to Eat",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  ListNotif(
+                    name: "Stretching",
+                    time: "1 hour",
+                    title: "Its time to stretch",
+                    desc: "Hello Irfa, Its time to Stretch",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  ListNotif(
+                    name: "Drink Water",
+                    time: "30 minutes",
+                    title: "Its time to drink water",
+                    desc: "Hello Irfa, Its time to drink water",
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  ListNotif(
+                    name: "Eat",
+                    time: "5 Hours",
+                    title: "Its time to Eat",
+                    desc: "Hello Irfa, Its time to Eat",
+                  ),
+                ],
+              ),
             ),
           ),
         ),
@@ -96,7 +95,7 @@ class ListNotif extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         height: 150,
-        width: 400,
+        width: 360,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: Color(0xffffffff),
@@ -118,27 +117,43 @@ class ListNotif extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 13),
                 ),
                 Text(
                   "Remind Every " + time,
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 11),
                 ),
                 SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
                 Text(
                   "- Title : " + title,
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 11),
                 ),
                 Text(
                   "- Description : " + desc,
-                  style: TextStyle(fontSize: 12),
+                  style: TextStyle(fontSize: 11),
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
             ),
-          )
+          ),
+          Material(
+            color: Colors.transparent,
+            child: InkWell(
+              child: Container(
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Image(image: AssetImage("assets/png/Bell_active.png")),
+                    Image(image: AssetImage("assets/png/Edit_light.png")),
+                    Image(image: AssetImage("assets/png/Trash_light.png")),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ]));
   }
 }
